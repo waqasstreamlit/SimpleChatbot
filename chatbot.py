@@ -28,7 +28,7 @@ st.set_page_config(page_title="Simple Chatbot", layout="centered")
 # Title Section
 st.markdown("""
     <div style="
-        background-color: #F633FF;
+        background-color: #FF8033;
         color: white;
         border-radius: 12px;
         padding: 20px;
