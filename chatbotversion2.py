@@ -1,34 +1,31 @@
 import streamlit as st
 import google.generativeai as genai
 import os
+ 
 from dotenv import load_dotenv
+#configure the API key
 
-# Load environment variables
 load_dotenv()
-
-# Configure the API key
+#google_api_key = os.getenv('Google_Api_key')
 google_api_key = st.secrets["Google_Api_key"]
 genai.configure(api_key=google_api_key)
 
-# Initialize the model
+#genai.configure(api_key=google_api_key)
+
+#Inetialize the model
 model = genai.GenerativeModel('gemini-1.5-flash')
 
-# Function to get response from the model
-def get_chatbot_response(user_input):
-    try:
-        response = model.generate_content(user_input)
-        return response.text
-    except Exception as e:
-        st.error(f"Error generating response: {e}")
-        return "Sorry, something went wrong."
+#function to get responce from model
+def get_cahtbot_responce(user_input):
+    responce = model.generate_content(user_input)
+    return responce.text
 
-# Streamlit interface
+#streamlit interface
 st.set_page_config(page_title="Simple Chatbot", layout="centered")
 
 st.title("👾 Simple Chatbot by Waqas 👾")
 st.write("Powered by Google Generative AI")
 
-# Initialize chat history if not present
 if "history" not in st.session_state:
     st.session_state["history"] = []
 
@@ -62,15 +59,20 @@ for user_message, bot_message in st.session_state.history:
     </div>
     """, unsafe_allow_html=True)
 
-# Streamlit form for user input
-with st.form(key="chat_form", clear_on_submit=True):
-    user_input = st.text_input("", max_chars=200)
+
+#user_input = input("Enter your question = ")
+#output = get_cahtbot_responce(user_input)
+#print(output)
+
+#steamlit interface
+with st.form(key="chat_form",clear_on_submit=True):
+    user_input = st.text_input("",max_chars=200)
     submit_bt = st.form_submit_button("Send")
 
     if submit_bt:
         if user_input:
-            response = get_chatbot_response(user_input)
-            st.session_state.history.append((user_input, response))
-            st.write(response)
+            responce = get_cahtbot_responce(user_input)
+            st.session_state.history.append((user_input, responce))
+            st.write(responce)
         else:
-            st.warning("Please enter your query.")
+            st.warning("Please enter your query")
