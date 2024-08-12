@@ -28,7 +28,7 @@ st.set_page_config(page_title="Simple Chatbot", layout="centered")
 # Title Section
 st.markdown("""
     <div style="
-        background-color: #4CAF50;
+        background-color: #CAFF33;
         color: white;
         border-radius: 12px;
         padding: 20px;
@@ -42,13 +42,13 @@ st.markdown("""
 # Write Area Section
 st.markdown("""
     <div style="
-        background-color: #f0f4f8;
+        background-color: #33FFE3;
         border-radius: 12px;
         padding: 20px;
         margin: 20px 0;
         box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     ">
-        <h1>Powered by Google Generative AI</h1>
+        <p>Powered by Google Generative AI</p>
      </div>
     """, unsafe_allow_html=True)
 
