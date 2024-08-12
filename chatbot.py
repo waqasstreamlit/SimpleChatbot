@@ -38,19 +38,20 @@ st.markdown("""
         
     </div>
     """, unsafe_allow_html=True)
+st.write("Powered by Google Generative AI")
 
 # Write Area Section
-st.markdown("""
-    <div style="
-        background-color: #33FFE3;
-        border-radius: 12px;
-        padding: 20px;
-        margin: 20px 0;
-        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    ">
-        <p>Powered by Google Generative AI</p>
-     </div>
-    """, unsafe_allow_html=True)
+# st.markdown("""
+#     <div style="
+#         background-color: #33FFE3;
+#         border-radius: 12px;
+#         padding: 20px;
+#         margin: 20px 0;
+#         box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+#     ">
+#         <p>Powered by Google Generative AI</p>
+#      </div>
+#     """, unsafe_allow_html=True)
 
 # Initialize chat history if not present
 if "history" not in st.session_state:
