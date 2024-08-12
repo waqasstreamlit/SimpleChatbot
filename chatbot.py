@@ -25,7 +25,7 @@ def get_chatbot_response(user_input):
 # Streamlit interface
 st.set_page_config(page_title="Simple Chatbot", layout="centered")
 
-st.title("👾 Simple Chatbot by Waqas 👾")
+st.title("🤖 Simple Chatbot by Waqas 🤖")
 st.write("Powered by Google Generative AI")
 
 # Initialize chat history if not present
@@ -36,29 +36,31 @@ if "history" not in st.session_state:
 for user_message, bot_message in st.session_state.history:
     st.markdown(f"""
     <div style="
-        background-color: #d1d3e0;
-        border-radius: 15px;
-        padding: 10px 15px;
-        margin: 5px 0;
-        max-width: 70%;
+        background-color: #f0f4f8;
+        border-radius: 12px;
+        padding: 12px 18px;
+        margin: 8px 0;
+        max-width: 75%;
         text-align: left;
         display: inline-block;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     ">
-        <p style="margin: 0; font-size: 16px; line-height: 1.5;"><b>You:</b> {user_message} 😊</p>
+        <p style="margin: 0; font-size: 16px; color: #333;"><b>You:</b> {user_message}</p>
     </div>
     """, unsafe_allow_html=True)
 
     st.markdown(f"""
     <div style="
-        background-color: #e1ffc7;
-        border-radius: 15px;
-        padding: 10px 15px;
-        margin: 5px 0;
-        max-width: 70%;
+        background-color: #e6ffe6;
+        border-radius: 12px;
+        padding: 12px 18px;
+        margin: 8px 0;
+        max-width: 75%;
         text-align: left;
         display: inline-block;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     ">
-        <p style="margin: 0; font-size: 16px; line-height: 1.5;"><b>Bot:</b> {bot_message} 🤖</p>
+        <p style="margin: 0; font-size: 16px; color: #333;"><b>Bot:</b> {bot_message}</p>
     </div>
     """, unsafe_allow_html=True)
 
@@ -71,6 +73,6 @@ with st.form(key="chat_form", clear_on_submit=True):
         if user_input:
             response = get_chatbot_response(user_input)
             st.session_state.history.append((user_input, response))
-            st.write(response)
+            st.write(f"**Bot:** {response}")
         else:
             st.warning("Please enter your query.")
