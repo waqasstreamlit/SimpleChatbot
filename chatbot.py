@@ -35,7 +35,7 @@ st.markdown("""
         text-align: center;
     ">
         <h1>🤖 Simple Chatbot by Waqas 🤖</h1>
-        <p>Powered by Google Generative AI</p>
+        
     </div>
     """, unsafe_allow_html=True)
 
@@ -48,6 +48,8 @@ st.markdown("""
         margin: 20px 0;
         box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     ">
+        <h1>Powered by Google Generative AI</h1>
+     </div>
     """, unsafe_allow_html=True)
 
 # Initialize chat history if not present
@@ -88,16 +90,16 @@ for user_message, bot_message in st.session_state.history:
 
 st.markdown("</div>", unsafe_allow_html=True)
 
-# Form Section
-st.markdown("""
-    <div style="
-        background-color: #e8f0fe;
-        border-radius: 12px;
-        padding: 20px;
-        margin-top: 20px;
-        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    ">
-    """, unsafe_allow_html=True)
+# # Form Section
+# st.markdown("""
+#     <div style="
+#         background-color: #e8f0fe;
+#         border-radius: 12px;
+#         padding: 20px;
+#         margin-top: 20px;
+#         box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+#     ">
+#     """, unsafe_allow_html=True)
 
 # Streamlit form for user input
 with st.form(key="chat_form", clear_on_submit=True):
