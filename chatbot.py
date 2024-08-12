@@ -25,8 +25,30 @@ def get_chatbot_response(user_input):
 # Streamlit interface
 st.set_page_config(page_title="Simple Chatbot", layout="centered")
 
-st.title("🤖 Simple Chatbot by Waqas 🤖")
-st.write("Powered by Google Generative AI")
+# Title Section
+st.markdown("""
+    <div style="
+        background-color: #4CAF50;
+        color: white;
+        border-radius: 12px;
+        padding: 20px;
+        text-align: center;
+    ">
+        <h1>🤖 Simple Chatbot by Waqas 🤖</h1>
+        <p>Powered by Google Generative AI</p>
+    </div>
+    """, unsafe_allow_html=True)
+
+# Write Area Section
+st.markdown("""
+    <div style="
+        background-color: #f0f4f8;
+        border-radius: 12px;
+        padding: 20px;
+        margin: 20px 0;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    ">
+    """, unsafe_allow_html=True)
 
 # Initialize chat history if not present
 if "history" not in st.session_state:
@@ -36,7 +58,7 @@ if "history" not in st.session_state:
 for user_message, bot_message in st.session_state.history:
     st.markdown(f"""
     <div style="
-        background-color: #f0f4f8;
+        background-color: #ffffff;
         border-radius: 12px;
         padding: 12px 18px;
         margin: 8px 0;
@@ -64,6 +86,19 @@ for user_message, bot_message in st.session_state.history:
     </div>
     """, unsafe_allow_html=True)
 
+st.markdown("</div>", unsafe_allow_html=True)
+
+# Form Section
+st.markdown("""
+    <div style="
+        background-color: #e8f0fe;
+        border-radius: 12px;
+        padding: 20px;
+        margin-top: 20px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    ">
+    """, unsafe_allow_html=True)
+
 # Streamlit form for user input
 with st.form(key="chat_form", clear_on_submit=True):
     user_input = st.text_input("", max_chars=200)
@@ -76,3 +111,5 @@ with st.form(key="chat_form", clear_on_submit=True):
             st.write(f"**Bot:** {response}")
         else:
             st.warning("Please enter your query.")
+
+st.markdown("</div>", unsafe_allow_html=True)
