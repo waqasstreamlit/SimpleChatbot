@@ -6,7 +6,8 @@ from dotenv import load_dotenv
 #configure the API key
 
 load_dotenv()
-google_api_key = os.getenv('Google_Api_key')
+#google_api_key = os.getenv('Google_Api_key')
+google_api_key = st.secrets["Google_Api_key"]
 genai.configure(api_key=google_api_key)
 
 #genai.configure(api_key=google_api_key)
